@@ -21,7 +21,7 @@ sudo ufw allow 445
 
 ### /etc/samba/smb.conf
 * 差分が以下のようになるよう修正する
-```text
+```bash
 $ diff -uprN /etc/samba/smb.conf.org /etc/samba/smb.conf
 --- /etc/samba/smb.conf.org     2018-05-02 18:16:25.567600455 +0900
 +++ /etc/samba/smb.conf 2018-05-02 18:20:40.762445925 +0900

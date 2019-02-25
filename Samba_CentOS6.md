@@ -18,7 +18,7 @@ sudo chkconfig ip6tables off
 
 ### /etc/samba/smb.conf
 
-L58-62
+* L58-62
 ```text
 ### START ###
         unix charset = UTF-8
@@ -26,23 +26,20 @@ L58-62
         display charset = UTF-8
 ### END ###
 ```
-
-L79-82
+* L79-82
 ```text
 ### START ###
 #       workgroup = MYGROUP
         workgroup = WORKGROUP
 ### END ###
 ```
-
-L89-91
+* L89-91
 ```text
 ### START ###
         hosts allow = 127.0.0.1 10. 172.16. 192.168.
 ### END ###
 ```
-
-L232-236
+* L232-236
 ```text
 ### START ###
 #       load printers = yes
@@ -50,8 +47,7 @@ L232-236
         disable spoolss = yes
 ### END ###
 ```
-
-L267-270
+* L267-270
 ```text
 ### START ###
         create mask = 644

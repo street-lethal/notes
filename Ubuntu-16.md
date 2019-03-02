@@ -1,10 +1,11 @@
 ## GNOME
+upgrade が20分程度
 ```bash
 sudo apt update
 sudo apt upgrade -y
 sudo apt install -y gnome-session-flashback
 sudo reboot
-sudo apt install $(check-language-support)
+sudo apt install -y $(check-language-support)
 im-config -n fcitx
 ```
 ## swap 領域削除
@@ -15,9 +16,15 @@ exit 0 の前の行に追加
 ```
 swapoff -a
 ```
+
 ## 閉じるボタンを右に表示
 ```bash
 gsettings set org.gnome.desktop.wm.preferences button-layout ':minimize,maximize,close'
+```
+
+## historyに時刻記録
+```bash
+echo "HISTTIMEFORMAT='%Y-%m-%dT%T%z '" >> ~/.bashrc
 ```
 
 ## デスクトップにゴミ箱表示
@@ -69,7 +76,10 @@ gsettings set org.gnome.nautilus.preferences executable-text-activation ask
 ```bash
 firefox -P
 ```
-* create
+* `Create Profile`
+* `Create Profile Wizard` -> `Next`
+* `secondary` と記載
+* `Finish`
 * デスクトップにショートカットを作成する
 * ショートカットを右クリック -> プロパティ
 * 「コマンド」に「firefox -P secondary」と記述
@@ -88,7 +98,6 @@ reg delete HKLM\SYSTEM\CurrentControlSet\Control\TimeZoneInformation /v RealTime
 
 # Ubuntu のアンインストール
 ## MBR 修復
-
 ```
 bootrec /fixboot
 bootrec /fixmbr

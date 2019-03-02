@@ -85,3 +85,12 @@ reg add "HKEY_LOCAL_MACHINE\System\CurrentControlSet\Control\TimeZoneInformation
 ```
 reg delete HKLM\SYSTEM\CurrentControlSet\Control\TimeZoneInformation /v RealTimeIsUniversal /f
 ```
+
+# Ubuntu のアンインストール
+## MBR 修復
+
+```
+bootrec /fixboot
+bootrec /fixmbr
+exit
+```

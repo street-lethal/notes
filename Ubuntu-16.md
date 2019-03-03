@@ -5,9 +5,15 @@ sudo apt update
 sudo apt upgrade -y
 sudo apt install -y gnome-session-flashback
 sudo reboot
+```
+
+## 日本語入力
+```bash
 sudo apt install -y $(check-language-support)
 im-config -n fcitx
 ```
+再ログイン後に有効
+
 ## swap 領域削除
 ```bash
 sudo vi /etc/rc.local
@@ -26,10 +32,20 @@ gsettings set org.gnome.desktop.wm.preferences button-layout ':minimize,maximize
 ```bash
 echo "HISTTIMEFORMAT='%Y-%m-%dT%T%z '" >> ~/.bashrc
 ```
+## Nautilus関連
+### Nautilus デフォルトを一覧表示に
+```bash
+gsettings set org.gnome.nautilus.preferences default-folder-viewer 'list-view'
+```
 
-## デスクトップにゴミ箱表示
+### デスクトップにゴミ箱表示
 ```bash
 gsettings set org.gnome.nautilus.desktop trash-icon-visible true
+```
+
+### 実行権限のあるファイルをダブルクリックで実行できるようにする
+```bash
+gsettings set org.gnome.nautilus.preferences executable-text-activation ask
 ```
 
 ## ホームディレクトリの表記を英語名に変更
@@ -64,11 +80,6 @@ sudo apt install -y vim
 ## MP3再生可能にする
 ```bash
 sudo apt install -y ubuntu-restricted-extras
-```
-
-## 実行権限のあるファイルをダブルクリックで実行できるようにする
-```bash
-gsettings set org.gnome.nautilus.preferences executable-text-activation ask
 ```
 
 ## Firefox 二重起動

@@ -18,3 +18,13 @@ sudo apt install -y mcomix
 ```
 ~/.config/google-chrome/Default
 ```
+
+## Ubuntu クリップボード
+### インストール
+```bash
+sudo apt install -y xsel
+```
+### クリップボードへコピー
+```bash
+cat ~/clip.txt | xsel --clipboard --input
+```

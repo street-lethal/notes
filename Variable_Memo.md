@@ -28,3 +28,7 @@ sudo apt install -y xsel
 ```bash
 cat ~/clip.txt | xsel --clipboard --input
 ```
+改行コードを除去してコピーする場合
+```bash
+echo -n `cat ~/clip.txt` | xsel --clipboard --input
+```

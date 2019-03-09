@@ -46,6 +46,7 @@ sudo add-apt-repository "deb http://archive.canonical.com/ precise partner"
 sudo apt update
 sudo apt install -y adobereader-enu
 sudo add-apt-repository -r "deb http://archive.canonical.com/ precise partner"
+sudo apt update
 ```
 ### デフォルトアプリケーション変更
 ```bash

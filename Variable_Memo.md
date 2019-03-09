@@ -38,3 +38,30 @@ echo -n `cat ~/clip.txt` | xsel --clipboard --input
 ※Ubuntu16.04 のリポジトリにはないので 14.04 のリポジトリを使用
 * ダウンロードした mp3gain_1.5.2-r2-6_amd64.deb を実行してインストール
 * `Ubuntuソフトウェア` より `mp3gain` で検索し、 `easyMP3Gain` (GTK版とQT版とあるがQT版) をインストール
+
+## Adobe Reader
+### インストール
+```bash
+sudo add-apt-repository "deb http://archive.canonical.com/ precise partner"
+sudo apt update
+sudo apt install -y adobereader-enu
+sudo add-apt-repository -r "deb http://archive.canonical.com/ precise partner"
+```
+### デフォルトアプリケーション変更
+```bash
+cd /etc/gnome
+sudo git init .
+sudo git add .
+sudo git commit -m "first commit"
+sudo vi defaults.list # 以下参照
+nautilus -q
+```
+#### /etc/gnome/defaults.list
+* 修正前
+```text
+application/pdf=evince.desktop
+```
+* 修正後
+```text
+application/pdf=acroread.desktop
+```

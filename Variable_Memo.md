@@ -66,3 +66,12 @@ application/pdf=evince.desktop
 ```text
 application/pdf=acroread.desktop
 ```
+### Tips
+* `Edit` -> `Preference`
+  * `Full Screen` カテゴリ
+    * `Full screen with one page at a time` のチェックをOFF
+  * `Page Display` カテゴリ
+    * `Page Layout`: `Two-Up`
+    * `Zoom`: `Fit Page`
+* `View` -> `Page Display`
+  * `Show Cover Page During Two-Up`

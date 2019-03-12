@@ -66,6 +66,21 @@ application/pdf=evince.desktop
 ```text
 application/pdf=acroread.desktop
 ```
+#### 効かない場合
+```bash
+sudo cp /opt/Adobe/Reader9/Resource/Support/AdobeReader.desktop ~/.local/share/applications/
+sudo vi ~/.local/share/applications/AdobeReader.desktop # 以下参照
+```
+* 修正前
+```text
+Exec=acroread
+```
+* 修正後
+```text
+Exec=acroread %f
+```
+PDFの右クリック -> `プロパティ` -> `開き方` -> `Adobe Reader` -> `デフォルトに設定する`
+
 ### Tips
 * `Edit` -> `Preference`
   * `Full Screen` カテゴリ

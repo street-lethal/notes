@@ -29,3 +29,6 @@ cat filename.iso_* > filename.iso
 ```
 copy /b filename.iso_* filename.iso
 ```
+
+# evince(PDFリーダ) ショートカット
+* `F9` サイドペイン表示/非表示

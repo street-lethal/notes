@@ -8,13 +8,13 @@
 * [言語パック配布元](http://shinobar.server-on.net/puppy/opt/)より　`lang_pack_jp-2.1.sfs` をダウンロード
 * `lang_pack_jp-2.1.sfs` 実行
 * `[Install SFS]`
-* `[OK]`
 * `[Countrywizard Country Settings]` にチェックを入れて `[Run]`
   * 言語とキーボードを日本語に設定 して `[OK]`
 * `[OK]`
 
 ## 日本語入力可能に
-* メニューから `[セットアップ]` -> `[Puppy パッケージマネージャ]`
+* メニューから `[セットアップ]` -> `[Puppy パッケージマネージャ]`  
+  (注意) `[Puppy パッケージマネージャ]` というメニューがいくつか見えるが、アイコンに `+` が付いているもの 
 * 検索窓に `[scim]` と入力して検索
 * 一覧から `[scim-anthy_1.2.7-7]` をクリック
 * `[Do it!]`
@@ -32,8 +32,8 @@
     ```
   * Firefox
     ```bash
-    cp -r ~/firefox ./
-    cp -r ~/.mozilla ./
+    cp -r ~/firefox /tmp/root/
+    cp -r ~/.mozilla /tmp/root/
     ```
   * デスクトップに Firefox ショートカット作成  
     * (方法1)

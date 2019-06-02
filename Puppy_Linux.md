@@ -32,20 +32,19 @@
     ```
   * Firefox
     ```bash
-    cp -r ~/firefox /tmp/root/
     cp -r ~/.mozilla /tmp/root/
     ```
   * デスクトップに Firefox ショートカット作成  
     * (方法1)
-      `/tmp/root/Choices/ROX-Filer/` をエディタで開き、4行目あたりに以下を追記する
+      `/tmp/root/Choices/ROX-Filer/PuppyPin` をエディタで開き、4行目あたりに以下を追記する
       ```
-        <icon x="100" y="410" label="firefox">/root/firefox/firefox</icon>
+        <icon x="100" y="410" label="firefox">/usr/share/applications/firefox.desktop</icon>
       ```
     * (方法2)
       ```bash
       cd /tmp/root/Choices/ROX-Filer/
       split -l 4 -d PuppyPin PuppyPin_split_
-      echo '  <icon x="100" y="410" label="firefox">/root/firefox/firefox</icon>' >> PuppyPin_split_00
+      echo '  <icon x="100" y="410" label="firefox">/usr/share/applications/firefox.desktop</icon>' >> PuppyPin_split_00
       cat PuppyPin_split_* > PuppyPin
       rm PuppyPin_split_* 
       ```

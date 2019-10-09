@@ -59,6 +59,10 @@ LABEL=DATA /mnt/DATA auto nosuid,nodev,nofail,x-gvfs-show 0 0
 sudo apt -y --purge remove vim-common vim-tiny
 sudo apt install -y vim
 ```
+## Firefox で動画再生を可能にする
+```shell script
+sudo apt install -y ffmpeg
+```
 
 ## Firefox 二重起動
 * Firefox を終了しておく

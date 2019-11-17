@@ -28,3 +28,10 @@ browser.search.openintab
 browser.link.open_newwindow.restriction
 ```
 `0` に設定
+
+### userChrome.css を有効に
+
+```
+toolkit.legacyUserProfileCustomizations.stylesheets
+```
+`true` に設定

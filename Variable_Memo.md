@@ -32,3 +32,10 @@ copy /b filename.iso_* filename.iso
 
 # evince(PDFリーダ) ショートカット
 * `F9` サイドペイン表示/非表示
+
+# update git
+```bash
+sudo add-apt-repository -y ppa:git-core/ppa
+sudo apt update
+sudo apt install git -y
+```

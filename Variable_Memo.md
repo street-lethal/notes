@@ -39,3 +39,9 @@ sudo add-apt-repository -y ppa:git-core/ppa
 sudo apt update
 sudo apt install git -y
 ```
+
+# libdvdcss.so (Brasero で DVD リッピングに必要となるライブラリ) インストール
+```sh
+sudo apt -y install libdvd-pkg
+sudo dpkg-reconfigure libdvd-pkg
+``` 

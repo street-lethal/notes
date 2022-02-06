@@ -79,7 +79,7 @@ exit # 一度ログアウトしてから再ログイン
 `#{x.y.z}` は最新の正式版のバージョンに差し替え  
 https://github.com/docker/compose/releases/
 ```bash
-sudo curl -o /usr/local/bin/docker-compose -L https://github.com/docker/compose/releases/download/#{x.y.z}/docker-compose-`uname -s`-`uname -m`
+sudo curl -o /usr/local/bin/docker-compose -L https://github.com/docker/compose/releases/download/v#{x.y.z}/docker-compose-`uname -s`-`uname -m`
 sudo chmod 755 /usr/local/bin/docker-compose
 ```
 

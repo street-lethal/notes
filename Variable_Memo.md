@@ -45,3 +45,24 @@ sudo apt install git -y
 sudo apt -y install libdvd-pkg
 sudo dpkg-reconfigure libdvd-pkg
 ``` 
+
+# Ubuntu アプリケーションショートカット
+
+(例) intellij
+
+```
+touch /usr/share/applications/intellij.desktop
+vi /usr/share/applications/intellij.desktop
+```
+
+```
+[Desktop Entry]
+Version=13.0
+Type=Application
+Terminal=false
+Icon[en_US]=/home/z/intellij/bin/idea.png
+Name[en_US]=IntelliJ
+Exec=/home/z/intellij/bin/idea.sh
+Name=IntelliJ
+Icon=/home/z/intellij/bin/idea.png
+```

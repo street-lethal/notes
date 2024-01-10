@@ -24,6 +24,11 @@ echo "HISTTIMEFORMAT='%Y-%m-%dT%T%z '" >> ~/.bashrc
 gsettings set org.gnome.nautilus.preferences default-folder-viewer 'list-view'
 ```
 
+### 日時表示に秒を追加
+```bash
+gsettings set org.gnome.desktop.interface clock-show-seconds true
+```
+
 ### 実行権限のあるファイルをダブルクリックで実行できるようにする
 ```bash
 gsettings set org.gnome.nautilus.preferences executable-text-activation ask

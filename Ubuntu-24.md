@@ -59,6 +59,12 @@ sudo apt install -y vim
 sudo dpkg -i google-chrome-stable_current_amd64.deb
 sudo apt install -y usb-creator-gtk
 ``` 
+
+## バックアップされた Firefox のプロファイルが稼働中の Firefox のバージョンと合わずに起動できない場合
+```shell script
+firefox -allow-downgrade
+```
+
 ## Firefox で動画再生を可能にする
 ```shell script
 sudo apt install -y ffmpeg

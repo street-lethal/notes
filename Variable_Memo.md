@@ -1,6 +1,7 @@
 # gitignore_global
 ```bash
 git config --global core.excludesfile ~/.gitignore_global
+git config --global core.editor vi
 vi ~/.gitignore_global
 ```
 ## 設定例

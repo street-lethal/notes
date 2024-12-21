@@ -10,6 +10,12 @@ vi ~/.gitignore_global
 *.iml
 ```
 
+# コンソール表示を英語にする
+```sh
+echo "export LANG=en_US" >> ~/.bashrc
+source ~/.bashrc
+```
+
 # Google Chrome プロファイルディレクトリ
 ```
 ~/.config/google-chrome/Default

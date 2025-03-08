@@ -1,16 +1,28 @@
 ## wine
 
+(ファイルを指定せずにインストールする方法)
 ```sh
 sudo apt install -y wine
-sudo dpkg --add-architecture i386 && sudo apt-get update && sudo apt-get install wine32:i386
+sudo dpkg --add-architecture i386 && sudo apt update && sudo apt install -y wine32:i386
 ```
 
+(ファイルを指定してダウンロードしてインストールする方法)
+```sh
+wget http://archive.ubuntu.com/ubuntu/pool/universe/w/wine/wine_9.0~repack-4build3_all.deb
+sudo apt install -y ./wine_9.0~repack-4build3_all.deb
+sudo dpkg --add-architecture i386 && sudo apt update && sudo apt install -y wine32:i386
+```
+
+## Kindle のブラウザー準備
+
+```sh
+wget https://dl.winehq.org/wine/wine-gecko/2.47.4/wine-gecko-2.47.4-x86.msi
+wine msiexec /i wine-gecko-2.47.4-x86.msi
+```
 ## Kindle
 
 ```sh
 wine KindleForPC-installer-1.39.65383.exe
-wget https://dl.winehq.org/wine/wine-gecko/2.47.4/wine-gecko-2.47.4-x86.msi
-wine msiexec /i wine-gecko-2.47.4-x86.msi
 ```
 
 ## Python + Library
@@ -23,9 +35,8 @@ wine pip install pycryptodome
 
 ## Generate Key
 
-https://github.com/apprenticeharper/DeDRM_tools/blob/master/DeDRM_plugin/kindlekey.py からソースコードファイルをダウンロード
-
 ```sh
+wget https://raw.githubusercontent.com/apprenticeharper/DeDRM_tools/refs/heads/master/DeDRM_plugin/kindlekey.py
 wine python kindlekey.py 
 ```
 

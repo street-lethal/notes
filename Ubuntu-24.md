@@ -57,7 +57,7 @@ sudo apt install -y vim
 
 ```
 sudo dpkg -i google-chrome-stable_current_amd64.deb
-sudo apt install -y usb-creator-gtk
+sudo apt install -y usb-creator-gtk file-roller
 ``` 
 
 ## バックアップされた Firefox のプロファイルが稼働中の Firefox のバージョンと合わずに起動できない場合

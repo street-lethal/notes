@@ -8,6 +8,7 @@ vi ~/.gitignore_global
 ```
 .idea
 *.iml
+*.swp
 ```
 
 # コンソール表示を英語にする

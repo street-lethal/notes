@@ -59,8 +59,8 @@ sudo dpkg-reconfigure libdvd-pkg
 (例) intellij
 
 ```
-touch /usr/share/applications/intellij.desktop
-vi /usr/share/applications/intellij.desktop
+sudo touch /usr/share/applications/intellij.desktop
+sudo vi /usr/share/applications/intellij.desktop
 ```
 
 ```

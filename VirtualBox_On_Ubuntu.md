@@ -1,4 +1,4 @@
-# やる事
+# Secure Boot
 
 ```sh
 sudo apt install -y virtualbox-dkms --reinstall
@@ -54,4 +54,12 @@ sudo apt install -y virtualbox-dkms --reinstall
                                                           │                  <了解>                    <取消>                     │ 
                                                           │                                                                       │ 
                                                           └───────────────────────────────────────────────────────────────────────┘ 
+```
+
+
+# VirtualBox 上の Windows でライセンス認証
+
+```
+sudo cat /sys/firmware/acpi/tables/MSDM > /path/to/VirtualBox_VMs/Win_11/msdm
+VBoxManage setextradata Win_11 "VBoxInternal/Devices/acpi/0/Config/CustomTable" "/path/to/VirtualBox_VMs/Win_11/msdm"
 ```

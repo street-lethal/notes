@@ -74,3 +74,9 @@ Exec=/home/z/intellij/bin/idea.sh
 Name=IntelliJ
 Icon=/home/z/intellij/bin/idea.png
 ```
+
+# Windows ローカルアカウント
+
+* Shift + F10
+* コマンドプロンプトをクリックしてアクティブにする
+* `start ms-cxh:localonly`

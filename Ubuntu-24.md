@@ -60,6 +60,8 @@ sudo dpkg -i google-chrome-stable_current_amd64.deb
 sudo apt install -y usb-creator-gtk file-roller
 ``` 
 
+(file-roller で、パスワード付 zip ファイルを解凍せずに中身のファイルだけ開くには 7z が必要)
+
 ## バックアップされた Firefox のプロファイルが稼働中の Firefox のバージョンと合わずに起動できない場合
 ```shell script
 firefox -allow-downgrade

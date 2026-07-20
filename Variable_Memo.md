@@ -48,6 +48,26 @@ sudo apt update
 sudo apt install git -y
 ```
 
+# GitHub 複数アカウント
+
+* `~/.ssh/config`
+  ```
+  Host                github-sub
+  HostName            github.com
+  User                git
+  IdentityFile        ~/.ssh/keys/github_sub
+  ServerAliveInterval 60
+  ```
+* `.git/config`
+  ```
+  [remote "origin"]
+  	url = git@github-sub:path/to/repository.git
+  	fetch = +refs/heads/*:refs/remotes/origin/*
+  ```
+  * `path/to/repository` はリポジトリー URL の `https://github.com/` 以下  
+    (例: `https://github.com/street-lethal/notes` であれば `url = git@github-sub:street-lethal/notes.git` )
+
+
 # libdvdcss.so (Brasero で DVD リッピングに必要となるライブラリ) インストール
 ```sh
 sudo apt -y install libdvd-pkg

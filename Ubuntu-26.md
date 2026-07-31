@@ -73,6 +73,16 @@ sudo apt install -y usb-creator-gtk file-roller
 
 (file-roller で、パスワード付 zip ファイルを解凍せずに中身のファイルだけ開くには 7z が必要)
 
+## キーボード設定 (英字配列の場合)
+
+* `Ubuntu 設定` > `日本語(Mozc)` > `設定` > `一般`タブ > `キー設定の選択` > `編集`
+* 以下2のエントリーを追加
+
+|モード      |入力キー  |コマンド    |
+|------------|----------|------------|
+|直接入力    |Ctrl Space|IME を有効化|
+|入力文字なし|Ctrl Space|IME を無効化|
+
 ## バックアップされた Firefox のプロファイルが稼働中の Firefox のバージョンと合わずに起動できない場合
 ```shell script
 firefox -allow-downgrade

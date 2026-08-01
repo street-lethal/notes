@@ -1,80 +1,60 @@
 # Docker on Linux
-## Ubuntu
-### Git
+
+## Git
 ```bash
 sudo apt-get update
 sudo apt-get install git
 ```
 
-### Docker
-```bash
-curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
-sudo apt-key fingerprint 0EBFCD88
-sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable"
-sudo apt-get update
-sudo apt-get -y install docker-ce
-sudo vi /etc/docker/daemon.json # 編集方法は下記参照
-sudo systemctl restart docker.service
+## Docker
+
+### Set up Docker's apt repository.
+```sh
+# Add Docker's official GPG key:
+sudo apt update
+sudo apt install -y ca-certificates curl
+sudo install -m 0755 -d /etc/apt/keyrings
+sudo curl -fsSL https://download.docker.com/linux/ubuntu/gpg -o /etc/apt/keyrings/docker.asc
+sudo chmod a+r /etc/apt/keyrings/docker.asc
+
+# Add the repository to Apt sources:
+sudo tee /etc/apt/sources.list.d/docker.sources <<EOF
+Types: deb
+URIs: https://download.docker.com/linux/ubuntu
+Suites: $(. /etc/os-release && echo "${UBUNTU_CODENAME:-$VERSION_CODENAME}")
+Components: stable
+Architectures: $(dpkg --print-architecture)
+Signed-By: /etc/apt/keyrings/docker.asc
+EOF
+
+sudo apt update
 ```
 
-#### /etc/docker/daemon.json
-```json
-{
-  "experimental": true
-}
-```
-`One of the configured repositories failed` というエラーが出てビルドが失敗する場合は、
-以下コマンドで出力されるIPを、 `dns` をキーにして配列で記載
-```bash
-nmcli dev show | grep 'IP4.DNS'
+### Install the Docker packages.
+
+```sh
+sudo apt install -y docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
 ```
 
-#### 例
-```bash
-$ nmcli dev show | grep 'IP4.DNS'
-IP4.DNS[1]:                             192.168.3.11
-IP4.DNS[2]:                             8.8.8.8
-```
-/etc/docker/daemon.json の中身
-```json
-{
-  "experimental": true,
-  "dns": ["192.168.3.11", "8.8.8.8"]
-}
+Docker が稼働しているか確認
+```sh
+sudo systemctl status docker
 ```
 
-参考： https://askubuntu.com/questions/475764/docker-io-dns-doesnt-work-its-trying-to-use-8-8-8-8
-
-## CentOS
-### Git
-```bash
-sudo yum install git -y
-```
-### Docker
-```bash
-sudo yum -y install yum-utils
-sudo yum-config-manager --add-repo https://download.docker.com/linux/centos/docker-ce.repo
-sudo yum install docker-ce -y
-sudo mkdir /etc/docker
-sudo vi /etc/docker/daemon.json # 編集方法は下記参照
-sudo systemctl start docker.service
-sudo chkconfig docker on
-```
-#### /etc/docker/daemon.json
-```json
-{
-  "experimental": true
-}
+Docker が稼働していない場合は以下を実行
+```sh
+sudo systemctl status docker
 ```
 
-## Linux共通
-### 自ユーザにdocker権限を付加
+参考: https://docs.docker.com/engine/install/ubuntu/
+
+## 自ユーザにdocker権限を付加
 ```bash
 sudo usermod -aG docker $USER
 exit # 一度ログアウトしてから再ログイン
 ```
 
-### Docker compose
+## Docker compose
 以下のURLから最新の正式版をダウンロード  
 `#{x.y.z}` は最新の正式版のバージョンに差し替え  
 https://github.com/docker/compose/releases/
@@ -83,7 +63,7 @@ sudo curl -o /usr/local/bin/docker-compose -L https://github.com/docker/compose/
 sudo chmod 755 /usr/local/bin/docker-compose
 ```
 
-### Direnv
+## Direnv
 以下のURLから最新の正式版をダウンロード  
 `#{x.y.z}` は最新の正式版のバージョンに差し替え  
 https://github.com/direnv/direnv/releases

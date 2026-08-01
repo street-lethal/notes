@@ -83,6 +83,17 @@ sudo apt install -y usb-creator-gtk file-roller
 |直接入力    |Ctrl Space|IME を有効化|
 |入力文字なし|Ctrl Space|IME を無効化|
 
+
+## ログイン画面の拡大率を100%にする
+
+先にログイン後の拡大率を100%にしてから以下を実行
+
+```
+sudo cp ~/.config/monitors.xml /var/lib/gdm3/seat0/config/
+sudo chown --reference=/var/lib/gdm3/seat0/config /var/lib/gdm3/seat0/config/monitors.xml
+sudo chmod 600 /var/lib/gdm3/seat0/config/monitors.xml
+```
+
 ## バックアップされた Firefox のプロファイルが稼働中の Firefox のバージョンと合わずに起動できない場合
 ```shell script
 firefox -allow-downgrade

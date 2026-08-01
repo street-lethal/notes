@@ -1,6 +1,9 @@
 # Calibre
 
 ### 準備
+
+※ Ubuntu 26 では以下は不要
+
 ```sh
 sudo apt install -y wget libxcb-cursor0
 ```

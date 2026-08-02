@@ -11,6 +11,12 @@ vi ~/.gitignore_global
 *.swp
 ```
 
+# 非 ASCII 文字のファイル名を持つファイルを Git 管理する際に、 git show 等でファイル名をエスケープせずに表示
+
+```sh
+git config --global core.quotepath false
+```
+
 # コンソール表示を英語にする
 ```sh
 echo "export LANG=en_US" >> ~/.bashrc

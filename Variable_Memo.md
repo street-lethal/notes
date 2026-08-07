@@ -101,6 +101,23 @@ Name=IntelliJ
 Icon=/home/z/intellij/bin/idea.png
 ```
 
+# 日本語が急に打てなくなったら
+
+IBus エンジンを確認
+
+```sh
+ibus engine
+```
+
+正常なら `mozc-jp` / `mozc` が返るが、
+`xkb:us::eng` が返るようであれば画面右上の入力インジケータは「あ」でも実際にはMozcが選ばれていない。 
+
+その場合は IBus を再起動
+
+```sh
+ibus restart
+```
+
 # Windows ローカルアカウント
 
 * Shift + F10
